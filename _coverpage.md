@@ -1,4 +1,4 @@
-![logo](logo.jpg)
+![logo](/logo.jpg)
 
 关于一些学习笔记
 
