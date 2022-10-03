@@ -1,0 +1,52 @@
+  /* 左中右布局：浮动布局 */
+  .float-container {
+    width: 100%;
+  }
+
+  .float-container::after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+
+  .float-container>div {
+    float: left;
+    width: 100px;
+    height: 50px;
+    background-color: #ccc;
+  }
+
+  .float-container .float-l {
+    margin-left: -100%;
+  }
+
+  .float-container .float-m {
+    background-color: red;
+    width: 100%;
+  }
+
+  .float-container .float-r {
+    margin-left: -100px;
+  }
+
+  /* 左中右布局：flex布局 */
+
+  .flex-container {
+    display: flex;
+    height: 50px;
+  }
+
+  .flex-container .flex-l,
+  .flex-container .flex-r
+  {
+    width: 100px;
+    background-color: #ccc;
+  }
+  .flex-container .flex-r{
+    order: 3;
+  }
+  .flex-container .flex-m{
+    flex: 1;
+    order: 2;
+    background-color: red;
+  }
