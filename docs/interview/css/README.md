@@ -37,7 +37,86 @@
 </div>
 ```
 
+---
+
+## css盒模型
+
+| 名称 |组成部分| 性质 |
+| ----------- | -- |---|
+| 标准盒模型 |4| 包含margin border padding content |
+| IE盒模型|2| 包含margin content(border+padding+content)|
+>盒子模型转换
+
+```
+// 标准盒模型
+box-sizing:content-box;
+// IE盒模型
+box-sizing:border-box;
+```
+
+## css选择器、css属性继承
+
+|选择器|语法|列子|说明
+|---|---|---|---|
+|通配 |*|
+|id选择器|#|#app|
+|类选择器|.|.classname|
+|标签|html标签|div、span|
+|后代选择器|中间空格|ul li|
+|子元素选择器|>|ul >li|
+|相邻选择器|+|ul li +li|ul下面li的相邻li,第一个li被排除
+|属性选择器|html标签[href]||不常用
+
+**css哪些属性可以继承**
+
+- 文字系列：font-size color line-height text-align
+
+**css哪些属性不可以继承**
+
+- border padding margin
+
+**css优先级**
+
+- !important>内联样式>id>class>标签>通配
+- 优先级算法：相加
+|名称|权重|
+|---|---|
+!important|无穷大|
+|内联样式style|1000|
+|id|100|
+|class|10|
+|标签&伪元素|1|
+|通配&>&+|0|
+
+---
+
+## css画三角形
+
+**用边框border画**
+<div style="display:flex;align-items:center;width:100px;justify-content:space-between;">
+  <div style="border:10px solid transparent;border-bottom-color:#ccc;"></div>
+  <div style="border:10px solid transparent;border-top-color:#ccc;"></div>
+  <div style="border:10px solid transparent;border-right-color:#ccc;"></div>
+  <div style="border:10px solid transparent;border-left-color:#ccc;"></div>
+</div>
+
+```
+<div style="display:flex;align-items:center;width:100px;justify-content:space-between;">
+  <div style="border:10px solid transparent;border-bottom-color:#ccc;"></div>
+  <div style="border:10px solid transparent;border-top-color:#ccc;"></div>
+  <div style="border:10px solid transparent;border-right-color:#ccc;"></div>
+  <div style="border:10px solid transparent;border-left-color:#ccc;"></div>
+</div>
+```
+## BFC
+**BFC:块级格式化上下文 block formatting context**
+
 ## 常见问题
+
+> height 和line-height的区别
+
+- **height是元素的高度、line-height是行高**
+- **line-height是行高,如果换行盒子的高度会增大**
 
 > padding 和margin的区别
 
@@ -47,7 +126,7 @@
 
 **百分比会继承父元素的宽高，vw vh只和设备的宽高有关**
 
-> 小字体
+> 实现小字体
 
 <div>
   <div style="font-size:12px">12px字体</div>
@@ -60,4 +139,5 @@
   <div style="display: inline-block;font-size:12px;transform:scale(0.8);-webkit-transform:scale(0.8)">小字体</div>
 </div>
 ```
+
 ---
