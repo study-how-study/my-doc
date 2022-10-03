@@ -109,7 +109,8 @@ box-sizing:border-box;
 </div>
 ```
 ## BFC
-**BFC:块级格式化上下文 block formatting context**
+> [!NOTE]
+>  - **BFC : 块级格式化上下文 block formatting context**
 
 ## 常见问题
 

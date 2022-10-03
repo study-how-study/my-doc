@@ -1,8 +1,9 @@
 **行内元素有哪些、块级元素有哪些、空元素有哪些**
-- 行内元素: span img input
-- 块级元素：div footer header section p h1...h6、...
-- 空元素：br、hr
-- 块级元素独占一行
+> [!NOTE]
+> - 行内元素: span img input
+> - 块级元素：div footer header section p h1...h6、...
+> - 空元素：br、hr
+> - 块级元素独占一行
 
 ```
   display:inline;
@@ -10,7 +11,7 @@
   display:block;
 ```
 **页面导入样式时，使用link和@import的区别**
-- 现有link后有@import (link兼容ie浏览器)
+- 先有link后有@import (link兼容ie浏览器)
 - 先加载link后加载@import
 
 **title和h1的区别**
@@ -33,9 +34,10 @@
 - alt用于seo搜索，用于描述图片，方便蜘蛛抓取
 
 **图片格式png jpg gif webp区别** 
-- png为无损压缩，体积比jpg大，适合做小图标
-- 采用压缩算法，有一点失真，体积小
-- gif做动图、很少用
-- webp同时支持有损和无损压缩，体积更小，兼容性不好
+> [!NOTE]
+> - png为**无损压缩**，体积比jpg大，适合做小图标
+> - jpg采用**压缩算法**，有一点失真，体积小
+> - gif做动图、很少用
+> - webp同时支持有损和无损压缩，体积更小，兼容性不好
 
 
