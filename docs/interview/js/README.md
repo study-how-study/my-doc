@@ -1,3 +1,4 @@
+# js面试题
 
 ## let 和 var 的区别
 
@@ -7,7 +8,8 @@
 | 局部(块级)作用域 | 是 | 否 |
 | 重复声明 | 否 | 是 |
 
-## 生拷贝 和 浅拷贝 的区别
+## 深拷贝 和 浅拷贝 的区别
+
 - **基本数据类型赋值为深拷贝，引用数据类型赋值为浅拷贝**
 
 - **引用数据类型拷贝，只拷贝一层为浅拷贝，拷贝所有为深拷贝**
@@ -20,7 +22,7 @@
 
 - **深拷贝代码**
   
-```
+```javascript
 function deepClone(obj) {
     if (typeof obj !== 'object') {
       return obj
@@ -39,11 +41,10 @@ function deepClone(obj) {
     return resultObj
 }
 ```
-<br>
 
 - **使用lodash**
   
-```
+```javascript
   import {deepClone} from 'lodash'
   const copyobj = deepClone(obj)
 ```

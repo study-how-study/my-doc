@@ -1,3 +1,4 @@
+# css面试题
 
 ## 水平垂直居中
 
@@ -7,7 +8,7 @@
   <div style="margin:auto;width:50px;height:50px;background-color:blue"></div>
 </div>
 
-```
+```html
 <div style="display:flex;width:100px;height:100px;background-color:red">
   <div style="margin:auto;width:50px;height:50px;background-color:blue"></div>
 </div>
@@ -19,7 +20,7 @@
   <div style="width:50px;height:50px;background-color:blue"></div>
 </div>
 
-```
+```html
 <div style="display:flex;align-items:center;justify-content:center;width:100px;height:100px;background-color:red">
   <div style="width:50px;height:50px;background-color:blue"></div>
 </div>
@@ -31,7 +32,7 @@
   <div style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);width:50px;height:50px;background-color:blue"></div>
 </div>
 
-```
+```html
 <div style="position:relative;width:100px;height:100px;background-color:red">
   <div style="position:absolute;top:50%;left:50%;transform: translate(-50%, -50%);width:50px;height:50px;background-color:blue"></div>
 </div>
@@ -48,17 +49,15 @@
   <div class="float-r"></div>
 </div>
 
-**html**
-
-```
+```html
 <div class="float-container">
   <div class="float-m"></div>
   <div class="float-l"></div>
   <div class="float-r"></div>
 </div>
 ```
-**css**
-```
+
+```css
   .float-container {
     width: 100%;
   }
@@ -98,17 +97,15 @@
   <div class="flex-r"></div>
 </div>
 
-**html**
-
-```
+```html
 <div class="flex-container">
   <div class="flex-m"></div>
   <div class="flex-l"></div>
   <div class="flex-r"></div>
 </div>
 ```
-**css**
-```
+
+```css
  /* 左中右布局：flex布局 */
 
   .flex-container {
@@ -132,6 +129,7 @@
   }
 
 ```
+
 ---
 
 ## css盒模型
@@ -142,11 +140,11 @@
 | IE盒模型|2| 包含margin content(border+padding+content)|
 >盒子模型转换
 
-```
+```css
 
-// 标准盒模型
+/* 标准盒模型 */
 box-sizing:content-box;
-// IE盒模型
+/*  IE盒模型 */
 box-sizing:border-box;
 
 ```
@@ -166,15 +164,15 @@ box-sizing:border-box;
 |相邻选择器|+|ul li +li|ul下面li的相邻li,第一个li被排除
 |属性选择器|html标签[href]||不常用
 
-**css哪些属性可以继承**
+### **css哪些属性可以继承**
 
 - 文字系列：font-size color line-height text-align
 
-**css哪些属性不可以继承**
+### **css哪些属性不可以继承**
 
 - border padding margin
 
-**css优先级**
+### **css优先级**
 
 - !important>内联样式>id>class>标签>通配
 - 优先级算法：相加
@@ -191,7 +189,8 @@ box-sizing:border-box;
 
 ## css画三角形
 
-**用边框border画**
+### **用边框border画**
+
 <div style="display:flex;align-items:center;width:100px;justify-content:space-between;">
   <div style="border:10px solid transparent;border-bottom-color:#ccc;"></div>
   <div style="border:10px solid transparent;border-top-color:#ccc;"></div>
@@ -199,7 +198,7 @@ box-sizing:border-box;
   <div style="border:10px solid transparent;border-left-color:#ccc;"></div>
 </div>
 
-```
+```html
 
 <div style="display:flex;align-items:center;width:100px;justify-content:space-between;">
   <div style="border:10px solid transparent;border-bottom-color:#ccc;"></div>
@@ -223,13 +222,13 @@ box-sizing:border-box;
 >   - display的值为**inline-block table-cell...**
 >   - position的值为**absolute、fixed**
 
-**清除浮动的方法**
+### **清除浮动的方法**
 
 - 触发BFC
 - 多创建一个盒子，添加样式 clear:both;
 - after方式
 
-```
+```css
 ul:after,ul:before{
     content:'';
     display:block;
@@ -240,6 +239,7 @@ ul:after,ul:before{
 ---
 
 ## display:none;和visibility:hidden的区别
+
 ||display:none|visibility:hidden|
 |--|--|--|
 |dom节点从文档中移除|是|否|
@@ -247,11 +247,14 @@ ul:after,ul:before{
 |是否产生重绘|是|是|
 
 > [!NOTE]
+>
 > - 回流是dom节点树（包括位置）产生变化、重绘是根据dom节点和样式渲染图像
 > - 产生回流一定会产生重绘
 > - 产生回流的场景： 定位发生变化、display显示隐藏
 > - 产生重绘的场景： 样式变化、换皮肤
+>
 ---
+
 ## 定位
 
 |定位|参照物|文档流|说明|注意事项|
@@ -261,17 +264,22 @@ ul:after,ul:before{
 |relative|自身|不脱离|定位后以前的位置还在|有left则right不起效，有top则bottom不起效|
 |absolute|父元素|脱离|定位后以前的位置不在|top left bottom right 都能生效|
 ---
+
 ## css重置
+
 > normalize **让不同浏览器样式一样**
 
-```
+```html
 <link href="https://cdn.bootcdn.net/ajax/libs/normalize/8.0.1/normalize.css" rel="stylesheet">
 ```
+
 > reset.css **重置样式**
-```
+
+```css
 /*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */html,body,p,ol,ul,li,dl,dt,dd,blockquote,figure,fieldset,legend,textarea,pre,iframe,hr,h1,h2,h3,h4,h5,h6{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}ul{list-style:none}button,input,select{margin:0}html{box-sizing:border-box}*,*::before,*::after{box-sizing:inherit}img,video{height:auto;max-width:100%}iframe{border:0}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 ```
+
 ## 常见问题
 
 > height 和line-height的区别
@@ -281,11 +289,11 @@ ul:after,ul:before{
 
 > padding 和margin的区别
 
-**padding作用于元素内部，会增加宽和高；margin作用于元素外部，不会增加元素的宽和高**
+### **padding作用于元素内部，会增加宽和高；margin作用于元素外部，不会增加元素的宽和高**
 
 > 百分比和vw vh的区别
 
-**百分比会继承父元素的宽高，vw vh只和设备的宽高有关**
+### **百分比会继承父元素的宽高，vw vh只和设备的宽高有关**
 
 > 实现小字体
 
@@ -294,12 +302,13 @@ ul:after,ul:before{
   <div style="display: inline-block;font-size:12px;transform:scale(0.8);-webkit-transform:scale(0.8)">小字体</div>
 </div>
 
-```
+```html
 <div>
   <div style="font-size:12px">12px字体</div>
   <div style="display: inline-block;font-size:12px;transform:scale(0.8);-webkit-transform:scale(0.8)">小字体</div>
 </div>
 ```
+
 ---
 
 > opacity和rgba的区别
